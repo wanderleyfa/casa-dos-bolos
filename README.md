@@ -33,3 +33,15 @@ Deveríamos utilizar o seguinte comando :
 Mas com o script `test` do Composer utilizaremos apenas
 ```bash
 composer test
+
+## pint
+
+[Laravel Pint](https://laravel.com/docs/9.x/pint) é um formatador de estilo de código PHP opinativo para minimalistas. O [Laravel Pint](https://laravel.com/docs/9.x/pint) é construído em cima do PHP-CS-Fixer e torna simples garantir que seu estilo de código permaneça limpo e consistente. Ele pode ser utilizada em qualquer projeto PHP
+
+Deveríamos utilizar o seguinte comando :
+```bash
+./vendor/bin/pint
+```
+Mas com o script `pint` do Composer utilizaremos apenas
+```bash
+composer pint

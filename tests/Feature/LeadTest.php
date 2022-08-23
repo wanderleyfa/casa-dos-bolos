@@ -17,14 +17,14 @@ it('do not add a lead without data', function () {
     $response->assertStatus(422);
 });
 
-test('add a lead with data', function () {
+it('add a lead with data', function () {
     $attributes = Lead::factory()->raw();
     $response = $this->postJson('/api/leads', $attributes);
     $response->assertStatus(201)->assertJson(['message' => 'Lead created successfully!']);
     $this->assertDatabaseHas('leads', $attributes);
 });
 
-test('can retrieve a Lead', function () {
+it('can retrieve a Lead', function () {
     $lead = Lead::factory()->create();
 
     $response = $this->getJson("/api/leads/{$lead->id}");
@@ -41,7 +41,7 @@ test('can retrieve a Lead', function () {
     $response->assertStatus(200)->assertJson($data);
 });
 
-test('can update a lead', function () {
+it('can update a lead', function () {
     $lead = Lead::factory()->create();
 
     $leadAlterado = [
@@ -55,7 +55,7 @@ test('can update a lead', function () {
     $this->assertDatabaseHas('leads', $leadAlterado);
 });
 
-test('can erase a lead', function () {
+it('can erase a lead', function () {
     $lead = Lead::factory()->create();
     $response = $this->deleteJson("/api/leads/{$lead->id}");
     $response->assertStatus(202);

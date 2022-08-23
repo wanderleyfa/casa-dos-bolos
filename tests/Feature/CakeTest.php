@@ -10,14 +10,14 @@ it('do not add a cake without data', function () {
     $response->assertStatus(422);
 });
 
-test('add a cake with data', function () {
+it('add a cake with data', function () {
     $attributes = Cake::factory()->raw();
     $response = $this->postJson('/api/cakes', $attributes);
     $response->assertStatus(201)->assertJson(['message' => 'Cake created successfully!']);
     $this->assertDatabaseHas('cakes', $attributes);
 });
 
-test('can retrieve a Cake', function () {
+it('can retrieve a Cake', function () {
     $cake = Cake::factory()->create();
 
     $response = $this->getJson("/api/cakes/{$cake->id}");
@@ -36,7 +36,7 @@ test('can retrieve a Cake', function () {
     $response->assertStatus(200)->assertJson($data);
 });
 
-test('can update a cake', function () {
+it('can update a cake', function () {
     $cake = Cake::factory()->create();
 
     $cakeAlterado = [
@@ -52,7 +52,7 @@ test('can update a cake', function () {
     $this->assertDatabaseHas('cakes', $cakeAlterado);
 });
 
-test('can erase a cake', function () {
+it('can erase a cake', function () {
     $cake = Cake::factory()->create();
     $response = $this->deleteJson("/api/cakes/{$cake->id}");
     $response->assertStatus(202);

@@ -9,9 +9,22 @@ wanderley ferreira de albuquerque [wanderleyfa@gmail.com](wanderleyfa@gmail.com)
 
 ## Getting started
 
-- Clone o repositorio
+- Clone o repositorio 
 - copie `env.example` para `.env`, e atualize com as variaveis do projeto que voce irá utilizar
-- execute o comando `composer install`
+- configure as variaveis de e-mail no arquivo .env
+    - MAIL_MAILER=
+    - MAIL_HOST=
+    - MAIL_PORT=
+    - MAIL_USERNAME=
+    - MAIL_PASSWORD=
+    - MAIL_ENCRYPTION=
+    - MAIL_FROM_ADDRESS=
+- execute o comando, na raiz do projeto, `composer install`
+- execute o comando, na raiz do projeto, `php artisan key:generate`
+- execute o comando, na raiz do projeto, `php artisan migrate:fresh --seed`
+- execute o comando, na raiz do projeto, `composer test`
+
+- para que a fila de e-mails seja executada, comande a seguinte linha na raiz do projeto `php artisan queue:work`
 
 # Composer Scripts
 

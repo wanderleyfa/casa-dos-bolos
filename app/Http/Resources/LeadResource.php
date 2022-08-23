@@ -11,7 +11,7 @@ class LeadResource extends JsonResource
         return [
             'name' => $lead->name,
             'email' => $lead->email,
-            'cakes_id' => $lead->cakes_id,
+            'cake_id' => $lead->cake_id,
             'created_at'  => date('d/m/Y h:m', strtotime($lead->created_at)),
             'updated_at'  => date('d/m/Y h:m', strtotime($lead->updated_at)),
         ];

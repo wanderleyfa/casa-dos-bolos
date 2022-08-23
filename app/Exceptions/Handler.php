@@ -72,7 +72,7 @@ class Handler extends ExceptionHandler
                 }
             }
 
-            return $this->errorResponse([], 404, 'Destination not found');
+              return $this->errorResponse([], 404, 'Destination not found');
         });
     }
 }

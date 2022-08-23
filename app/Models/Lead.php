@@ -23,6 +23,11 @@ class Lead extends Model
     protected $fillable = [
         'name',
         'email',
-        'cakes_id'
+        'cake_id'
     ];
+
+    public function cake()
+    {
+        return $this->belongsTo(Cake::class, 'cake_id');
+    }
 }

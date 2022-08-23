@@ -20,7 +20,7 @@ class CreateLeadsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreignId('cakes_id')->constrained('cakes');
+            $table->foreignId('cake_id')->constrained('cakes');
         });
     }
 

@@ -19,7 +19,7 @@ class LeadFactory extends Factory
         return [
             'name' => $this->faker->name($gender),
             'email' => $this->faker->unique()->safeEmail(),
-            'cakes_id' => 1,
+            'cake_id' => 1,
         ];
     }
 }

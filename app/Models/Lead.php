@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Cake extends Model
+class Lead extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -14,9 +14,7 @@ class Cake extends Model
     protected $casts = [
         'id' => 'int',
         'name' => 'string',
-        'weight' => 'int',
-        'value' => 'double',
-        'inventory' => 'int',
+        'email' => 'string',
         'created_at' => 'datetime:d/m/Y h:m',
         'updated_at' => 'datetime:d/m/Y h:m',
         'deleted_at' => 'datetime:d/m/Y h:m',
@@ -24,8 +22,7 @@ class Cake extends Model
 
     protected $fillable = [
         'name',
-        'weight',
-        'value',
-        'inventory',
+        'email',
+        'cakes_id'
     ];
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Cake;
+use App\Models\Lead;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,5 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Cake::factory(10)->create();
+        Lead::factory(10)->create();
     }
 }

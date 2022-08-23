@@ -70,11 +70,9 @@ class Handler extends ExceptionHandler
                 if ($e->getPrevious() instanceof ErrorException) {
                     return $this->errorResponse([], 500, 'Failed to fetch property :'.$e->getPrevious()->getTraceAsString());
                 }
-
-                
             }
-            return $this->errorResponse([], 404, 'Destination not found');
 
+             return $this->errorResponse([], 404, 'Destination not found');
         });
     }
 }

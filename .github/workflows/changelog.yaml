@@ -1,0 +1,5 @@
+- name: "Build Changelog"
+  id: build_changelog
+  uses: mikepenz/release-changelog-builder-action@{latest-release}
+  env:
+    GITHUB_TOKEN: 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
